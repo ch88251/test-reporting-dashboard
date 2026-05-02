@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retention | Test Automation Reporting</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">Q</div>
+        <div>
+          <div class="brand-title">Quality<br />Dashboard</div>
+          <div class="brand-subtitle">Test Automation Reporting</div>
+        </div>
+      </div>
+      <div class="nav-section-title">Dashboards</div><a class="nav-item" href="overview.html">Overview</a><a class="nav-item" href="test-runs.html">Test Runs</a><a class="nav-item" href="failure-analysis.html">Failure Analysis</a><a class="nav-item" href="flaky-tests.html">Flaky Tests</a><a class="nav-item" href="duration-trends.html">Duration Trends</a><div class="nav-section-title">Administration</div><a class="nav-item" href="administration.html">Administration</a><a class="nav-item" href="applications.html">Applications</a><a class="nav-item" href="environments.html">Environments</a><a class="nav-item active" href="retention.html">Retention</a><a class="nav-item" href="system-health.html">System Health</a>
+    </aside>
+    
+    <main class="main">
+      <section class="topbar">
+        <div class="page-title">
+          <h1>Retention</h1>
+          <p>Configure cleanup policies for indexed data and filesystem artifacts.</p>
+        </div>
+        <div class="status-pill warning"><span class="status-dot"></span> Manual Cleanup Enabled</div>
+      </section>
+      
+<section class="metrics-grid">
+  <article class="metric-card"><div class="metric-label">Retention Window</div><div class="metric-value">90d</div><div class="metric-footnote">Current configured policy</div></article>
+  <article class="metric-card"><div class="metric-label">Artifact Storage</div><div class="metric-value">72%</div><div class="metric-footnote">Filesystem utilization</div></article>
+  <article class="metric-card"><div class="metric-label">Eligible Runs</div><div class="metric-value">318</div><div class="metric-footnote">Older than policy window</div></article>
+  <article class="metric-card"><div class="metric-label">Recoverable Space</div><div class="metric-value">18GB</div><div class="metric-footnote">Estimated cleanup result</div></article>
+</section>
+<section class="content-grid equal">
+  <article class="panel"><div class="panel-header"><div><h2 class="panel-title">Retention Policy</h2><div class="panel-subtitle">Configure artifact and index cleanup behavior</div></div></div><div class="form-grid"><div class="form-field"><label>Artifact Retention Days</label><input value="90" /></div><div class="form-field"><label>Index Retention Days</label><input value="90" /></div><div class="form-field"><label>Cleanup Mode</label><select><option>Manual Only</option><option>Scheduled</option></select></div><div class="form-field"><label>Dry Run First</label><select><option>Yes</option><option>No</option></select></div></div><div class="button-row"><button class="primary-button">Save Policy</button><button class="secondary-button">Run Dry Run</button><button class="danger-button">Run Cleanup</button></div></article>
+  <article class="panel"><div class="panel-header"><div><h2 class="panel-title">Cleanup Preview</h2><div class="panel-subtitle">Runs that would be removed by policy</div></div></div><table><thead><tr><th>Category</th><th>Count</th><th>Size</th></tr></thead><tbody><tr><td>Robot HTML Reports</td><td>141</td><td>7.2GB</td></tr><tr><td>Playwright Traces</td><td>92</td><td>8.9GB</td></tr><tr><td>JUnit/XML Results</td><td>318</td><td>420MB</td></tr></tbody></table></article>
+</section>
+
+    </main>
+  </div>
+</body>
+</html>

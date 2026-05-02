@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Environments | Test Automation Reporting</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">Q</div>
+        <div>
+          <div class="brand-title">Quality<br />Dashboard</div>
+          <div class="brand-subtitle">Test Automation Reporting</div>
+        </div>
+      </div>
+      <div class="nav-section-title">Dashboards</div><a class="nav-item" href="overview.html">Overview</a><a class="nav-item" href="test-runs.html">Test Runs</a><a class="nav-item" href="failure-analysis.html">Failure Analysis</a><a class="nav-item" href="flaky-tests.html">Flaky Tests</a><a class="nav-item" href="duration-trends.html">Duration Trends</a><div class="nav-section-title">Administration</div><a class="nav-item" href="administration.html">Administration</a><a class="nav-item" href="applications.html">Applications</a><a class="nav-item active" href="environments.html">Environments</a><a class="nav-item" href="retention.html">Retention</a><a class="nav-item" href="system-health.html">System Health</a>
+    </aside>
+    
+    <main class="main">
+      <section class="topbar">
+        <div class="page-title">
+          <h1>Environments</h1>
+          <p>Manage environment names and metadata used by published test runs.</p>
+        </div>
+        <div class="status-pill info"><span class="status-dot"></span> 5 Environments</div>
+      </section>
+      
+<section class="content-grid">
+  <article class="panel">
+    <div class="panel-header"><div><h2 class="panel-title">Reporting Environments</h2><div class="panel-subtitle">Environment names used by published test results</div></div><button class="panel-action">Add Environment</button></div>
+    <table><thead><tr><th>Name</th><th>Display Name</th><th>Purpose</th><th>Runs</th><th>Status</th></tr></thead><tbody><tr><td>development</td><td>Development</td><td>Developer validation</td><td>41</td><td><span class="badge pass">Active</span></td></tr><tr><td>nightly</td><td>Nightly</td><td>Scheduled regression</td><td>98</td><td><span class="badge pass">Active</span></td></tr><tr><td>foxtrot</td><td>Foxtrot</td><td>QA validation</td><td>76</td><td><span class="badge warn">Watch</span></td></tr><tr><td>preprod</td><td>Preprod</td><td>Release candidate</td><td>33</td><td><span class="badge pass">Active</span></td></tr></tbody></table>
+  </article>
+  <article class="panel">
+    <div class="panel-header"><div><h2 class="panel-title">Environment Details</h2><div class="panel-subtitle">Prototype edit form</div></div></div>
+    <div class="form-grid"><div class="form-field"><label>Key</label><input value="foxtrot" /></div><div class="form-field"><label>Display Name</label><input value="Foxtrot" /></div><div class="form-field"><label>Environment Type</label><select><option>QA</option><option>Dev</option><option>Preprod</option></select></div><div class="form-field"><label>Active</label><select><option>Yes</option><option>No</option></select></div><div class="form-field full-width"><label>Description</label><textarea>Primary QA validation environment.</textarea></div></div>
+    <div class="button-row"><button class="primary-button">Save Changes</button><button class="secondary-button">Cancel</button></div>
+  </article>
+</section>
+
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administration | Test Automation Reporting</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">Q</div>
+        <div>
+          <div class="brand-title">Quality<br />Dashboard</div>
+          <div class="brand-subtitle">Test Automation Reporting</div>
+        </div>
+      </div>
+      <div class="nav-section-title">Dashboards</div><a class="nav-item" href="overview.html">Overview</a><a class="nav-item" href="test-runs.html">Test Runs</a><a class="nav-item" href="failure-analysis.html">Failure Analysis</a><a class="nav-item" href="flaky-tests.html">Flaky Tests</a><a class="nav-item" href="duration-trends.html">Duration Trends</a><div class="nav-section-title">Administration</div><a class="nav-item active" href="administration.html">Administration</a><a class="nav-item" href="applications.html">Applications</a><a class="nav-item" href="environments.html">Environments</a><a class="nav-item" href="retention.html">Retention</a><a class="nav-item" href="system-health.html">System Health</a>
+    </aside>
+    
+    <main class="main">
+      <section class="topbar">
+        <div class="page-title">
+          <h1>Administration</h1>
+          <p>Manage reporting configuration, health, retention, and system metadata.</p>
+        </div>
+        <div class="status-pill "><span class="status-dot"></span> System Healthy</div>
+      </section>
+      
+<section class="metrics-grid">
+  <article class="metric-card"><div class="metric-label">Applications</div><div class="metric-value">12</div><div class="metric-footnote">Configured for reporting</div></article>
+  <article class="metric-card"><div class="metric-label">Environments</div><div class="metric-value">5</div><div class="metric-footnote">Development through preprod</div></article>
+  <article class="metric-card"><div class="metric-label">Retention Policy</div><div class="metric-value">90d</div><div class="metric-footnote">Artifacts and indexes</div></article>
+  <article class="metric-card"><div class="metric-label">System Status</div><div class="metric-value">OK</div><div class="metric-footnote">All services available</div></article>
+</section>
+<section class="content-grid equal">
+  <article class="panel"><div class="panel-header"><div><h2 class="panel-title">Administration Shortcuts</h2><div class="panel-subtitle">Common configuration areas</div></div></div><div class="list"><a class="list-item" href="applications.html"><div><div class="item-name">Applications</div><div class="item-meta">Manage application names, owners, and default tags.</div></div><span class="badge info">Open</span></a><a class="list-item" href="environments.html"><div><div class="item-name">Environments</div><div class="item-meta">Configure reporting environments and display names.</div></div><span class="badge info">Open</span></a><a class="list-item" href="retention.html"><div><div class="item-name">Retention</div><div class="item-meta">Control cleanup windows for reports and test indexes.</div></div><span class="badge info">Open</span></a></div></article>
+  <article class="panel"><div class="panel-header"><div><h2 class="panel-title">System Health Summary</h2><div class="panel-subtitle">Service-level status checks</div></div></div><div class="list"><div class="list-item"><div><div class="item-name">FastAPI Backend</div><div class="item-meta">Healthy · 24ms average response</div></div><span class="badge pass">OK</span></div><div class="list-item"><div><div class="item-name">Elasticsearch</div><div class="item-meta">Cluster green · 3 indexes active</div></div><span class="badge pass">OK</span></div><div class="list-item"><div><div class="item-name">Filesystem Artifacts</div><div class="item-meta">72% disk utilization</div></div><span class="badge warn">Watch</span></div></div></article>
+</section>
+
+    </main>
+  </div>
+</body>
+</html>

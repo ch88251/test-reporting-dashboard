@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test Runs | Test Automation Reporting</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">Q</div>
+        <div>
+          <div class="brand-title">Quality<br />Dashboard</div>
+          <div class="brand-subtitle">Test Automation Reporting</div>
+        </div>
+      </div>
+      <div class="nav-section-title">Dashboards</div><a class="nav-item" href="overview.html">Overview</a><a class="nav-item active" href="test-runs.html">Test Runs</a><a class="nav-item" href="failure-analysis.html">Failure Analysis</a><a class="nav-item" href="flaky-tests.html">Flaky Tests</a><a class="nav-item" href="duration-trends.html">Duration Trends</a><div class="nav-section-title">Administration</div><a class="nav-item" href="administration.html">Administration</a><a class="nav-item" href="applications.html">Applications</a><a class="nav-item" href="environments.html">Environments</a><a class="nav-item" href="retention.html">Retention</a><a class="nav-item" href="system-health.html">System Health</a>
+    </aside>
+    
+    <main class="main">
+      <section class="topbar">
+        <div class="page-title">
+          <h1>Test Runs</h1>
+          <p>Browse, filter, and inspect published test executions across applications and environments.</p>
+        </div>
+        <div class="status-pill info"><span class="status-dot"></span> 248 Runs Indexed</div>
+      </section>
+      
+<section class="filters">
+  <div class="filter-group"><label>Search</label><input type="text" placeholder="Run ID, app, suite, tag..." /></div>
+  <div class="filter-group"><label>Application</label><select><option>All Applications</option><option>Claims Service</option><option>Portal UI</option><option>Search API</option></select></div>
+  <div class="filter-group"><label>Environment</label><select><option>All Environments</option><option>Development</option><option>Nightly</option><option>Foxtrot</option><option>Preprod</option></select></div>
+  <div class="filter-group"><label>Status</label><select><option>All Statuses</option><option>Passed</option><option>Failed</option><option>Unstable</option><option>Aborted</option></select></div>
+  <div class="filter-group"><label>Date Range</label><input type="text" value="Last 30 days" /></div>
+</section>
+<section class="metrics-grid">
+  <article class="metric-card"><div class="metric-label">Runs Matching Filters</div><div class="metric-value">86</div><div class="metric-footnote">Across 4 environments</div></article>
+  <article class="metric-card"><div class="metric-label">Successful Runs</div><div class="metric-value">72</div><div class="metric-footnote"><span class="metric-trend up">83.7%</span> run success rate</div></article>
+  <article class="metric-card"><div class="metric-label">Failed Runs</div><div class="metric-value">11</div><div class="metric-footnote">3 require triage</div></article>
+  <article class="metric-card"><div class="metric-label">Average Run Time</div><div class="metric-value">14m 26s</div><div class="metric-footnote">For selected filters</div></article>
+</section>
+<section class="content-grid">
+  <article class="panel">
+    <div class="panel-header"><div><h2 class="panel-title">Run Explorer</h2><div class="panel-subtitle">Click a run to inspect suites, failures, logs, and artifacts.</div></div><button class="panel-action">Export CSV</button></div>
+    <table><thead><tr><th>Run ID</th><th>Version</th><th>Application</th><th>Environment</th><th>Type</th><th>Tests</th><th>Pass Rate</th><th>Status</th></tr></thead><tbody>
+      <tr><td><strong>260501143012</strong></td><td>1.24.0</td><td>Portal UI</td><td>Foxtrot</td><td>Smoke</td><td>145</td><td>95.2%</td><td><span class="badge fail">Failed</span></td></tr>
+      <tr><td><strong>260501123455</strong></td><td>1.24.0</td><td>Search API</td><td>Nightly</td><td>API</td><td>328</td><td>100%</td><td><span class="badge pass">Passed</span></td></tr>
+      <tr><td><strong>260501101806</strong></td><td>1.24.0</td><td>Claims Service</td><td>Preprod</td><td>Regression</td><td>604</td><td>97.8%</td><td><span class="badge warn">Unstable</span></td></tr>
+      <tr><td><strong>260430231240</strong></td><td>1.23.0</td><td>Portal UI</td><td>Nightly</td><td>UI</td><td>212</td><td>88.6%</td><td><span class="badge fail">Failed</span></td></tr>
+    </tbody></table>
+  </article>
+  <article class="panel">
+    <div class="panel-header"><div><h2 class="panel-title">Selected Run Details</h2><div class="panel-subtitle">260501143012 · Portal UI · Foxtrot</div></div><button class="panel-action">Open Full Report</button></div>
+    <div class="list">
+      <div class="list-item"><div><div class="item-name">Execution Summary</div><div class="item-meta">Started 2026-05-01 14:30 · Duration 6m 32s</div></div><div class="item-count">95%</div></div>
+      <div class="list-item"><div><div class="item-name">Passed</div><div class="item-meta">138 tests completed successfully</div></div><div class="item-count" style="color: var(--success);">138</div></div>
+      <div class="list-item"><div><div class="item-name">Failed</div><div class="item-meta">7 tests need investigation</div></div><div class="item-count">7</div></div>
+      <div class="list-item"><div><div class="item-name">Artifacts</div><div class="item-meta">report.html · log.html · output.xml · screenshots</div></div><div class="item-count" style="color: var(--primary);">4</div></div>
+    </div>
+  </article>
+</section>
+<section class="bottom-grid">
+  <article class="panel"><div class="panel-header"><div><h2 class="panel-title">Suites in Selected Run</h2><div class="panel-subtitle">Suite-level breakdown for quick triage</div></div></div><table><thead><tr><th>Suite</th><th>Total</th><th>Passed</th><th>Failed</th><th>Duration</th><th>Status</th></tr></thead><tbody><tr><td>Authentication</td><td>28</td><td>27</td><td>1</td><td>1m 12s</td><td><span class="badge fail">Failed</span></td></tr><tr><td>Navigation</td><td>34</td><td>34</td><td>0</td><td>1m 46s</td><td><span class="badge pass">Passed</span></td></tr><tr><td>Search Workflow</td><td>41</td><td>36</td><td>5</td><td>2m 31s</td><td><span class="badge fail">Failed</span></td></tr></tbody></table></article>
+  <article class="panel"><div class="panel-header"><div><h2 class="panel-title">Recent Failed Tests</h2><div class="panel-subtitle">Failures from the selected run</div></div></div><div class="list"><div class="list-item"><div><div class="item-name">login.valid_user_can_login</div><div class="item-meta">Expected dashboard to be visible</div></div><div><span class="badge fail">UI</span></div></div><div class="list-item"><div><div class="item-name">search.filter_by_status</div><div class="item-meta">Timed out waiting for grid update</div></div><div><span class="badge fail">UI</span></div></div></div></article>
+</section>
+
+    </main>
+  </div>
+</body>
+</html>

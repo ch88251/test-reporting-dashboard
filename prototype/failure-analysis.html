@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Failure Analysis | Test Automation Reporting</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">Q</div>
+        <div>
+          <div class="brand-title">Quality<br />Dashboard</div>
+          <div class="brand-subtitle">Test Automation Reporting</div>
+        </div>
+      </div>
+      <div class="nav-section-title">Dashboards</div><a class="nav-item" href="overview.html">Overview</a><a class="nav-item" href="test-runs.html">Test Runs</a><a class="nav-item active" href="failure-analysis.html">Failure Analysis</a><a class="nav-item" href="flaky-tests.html">Flaky Tests</a><a class="nav-item" href="duration-trends.html">Duration Trends</a><div class="nav-section-title">Administration</div><a class="nav-item" href="administration.html">Administration</a><a class="nav-item" href="applications.html">Applications</a><a class="nav-item" href="environments.html">Environments</a><a class="nav-item" href="retention.html">Retention</a><a class="nav-item" href="system-health.html">System Health</a>
+    </aside>
+    
+    <main class="main">
+      <section class="topbar">
+        <div class="page-title">
+          <h1>Failure Analysis</h1>
+          <p>Analyze failure patterns, root causes, and recurring test issues.</p>
+        </div>
+        <div class="status-pill danger"><span class="status-dot"></span> 31 Open Failures</div>
+      </section>
+      
+<section class="filters">
+  <div class="filter-group"><label>Application</label><select><option>All Applications</option><option>Portal UI</option><option>Search API</option></select></div>
+  <div class="filter-group"><label>Failure Type</label><select><option>All Types</option><option>Assertion</option><option>Timeout</option><option>Environment</option><option>API Error</option></select></div>
+  <div class="filter-group"><label>Environment</label><select><option>All Environments</option><option>Nightly</option><option>Foxtrot</option></select></div>
+  <div class="filter-group"><label>Severity</label><select><option>All Severities</option><option>Critical</option><option>High</option><option>Medium</option></select></div>
+  <div class="filter-group"><label>Date Range</label><input type="text" value="Last 14 days" /></div>
+</section>
+<section class="metrics-grid">
+  <article class="metric-card"><div class="metric-label">Open Failures</div><div class="metric-value">31</div><div class="metric-footnote">Across 9 suites</div></article>
+  <article class="metric-card"><div class="metric-label">Critical Failures</div><div class="metric-value">6</div><div class="metric-footnote">Blocking release readiness</div></article>
+  <article class="metric-card"><div class="metric-label">Timeout Failures</div><div class="metric-value">12</div><div class="metric-footnote">Most common failure type</div></article>
+  <article class="metric-card"><div class="metric-label">New Since Last Run</div><div class="metric-value">4</div><div class="metric-footnote"><span class="metric-trend down">Needs triage</span></div></article>
+</section>
+<section class="content-grid">
+  <article class="panel"><div class="panel-header"><div><h2 class="panel-title">Failure Trend</h2><div class="panel-subtitle">Failures by day and failure type</div></div></div><div class="chart-placeholder"><div class="chart-line danger"></div><div class="chart-line secondary"></div></div></article>
+  <article class="panel"><div class="panel-header"><div><h2 class="panel-title">Failure Categories</h2><div class="panel-subtitle">Grouped by likely cause</div></div></div><div class="donut-wrap"><div class="donut"><div class="donut-center"><div class="donut-value">39%</div><div class="donut-label">Timeouts</div></div></div><div><div class="legend-item"><span class="legend-color fail"></span> Timeout</div><div class="legend-item"><span class="legend-color skip"></span> Assertion</div><div class="legend-item"><span class="legend-color info"></span> Environment</div></div></div></article>
+</section>
+<section class="bottom-grid">
+  <article class="panel"><div class="panel-header"><div><h2 class="panel-title">Top Failing Tests</h2><div class="panel-subtitle">Ranked by occurrence count</div></div></div><table><thead><tr><th>Test</th><th>Suite</th><th>Type</th><th>Count</th><th>Last Seen</th></tr></thead><tbody><tr><td>login.valid_user_can_login</td><td>Authentication</td><td><span class="badge fail">Assertion</span></td><td>8</td><td>Today</td></tr><tr><td>search.filter_by_status</td><td>Search Workflow</td><td><span class="badge warn">Timeout</span></td><td>6</td><td>Today</td></tr><tr><td>claims.create_claim_success</td><td>Claims API</td><td><span class="badge fail">API Error</span></td><td>4</td><td>Yesterday</td></tr></tbody></table></article>
+  <article class="panel"><div class="panel-header"><div><h2 class="panel-title">Failure Triage Notes</h2><div class="panel-subtitle">Prototype notes area for future workflow</div></div></div><div class="list"><div class="list-item"><div><div class="item-name">Possible environment instability</div><div class="item-meta">Search grid failures appear concentrated in nightly.</div></div><span class="badge warn">Review</span></div><div class="list-item"><div><div class="item-name">Authentication regression</div><div class="item-meta">Login failure is reproducible in Foxtrot smoke tests.</div></div><span class="badge fail">Blocker</span></div></div></article>
+</section>
+
+    </main>
+  </div>
+</body>
+</html>

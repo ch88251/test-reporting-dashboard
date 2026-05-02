@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Duration Trends | Test Automation Reporting</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">Q</div>
+        <div>
+          <div class="brand-title">Quality<br />Dashboard</div>
+          <div class="brand-subtitle">Test Automation Reporting</div>
+        </div>
+      </div>
+      <div class="nav-section-title">Dashboards</div><a class="nav-item" href="overview.html">Overview</a><a class="nav-item" href="test-runs.html">Test Runs</a><a class="nav-item" href="failure-analysis.html">Failure Analysis</a><a class="nav-item" href="flaky-tests.html">Flaky Tests</a><a class="nav-item active" href="duration-trends.html">Duration Trends</a><div class="nav-section-title">Administration</div><a class="nav-item" href="administration.html">Administration</a><a class="nav-item" href="applications.html">Applications</a><a class="nav-item" href="environments.html">Environments</a><a class="nav-item" href="retention.html">Retention</a><a class="nav-item" href="system-health.html">System Health</a>
+    </aside>
+    
+    <main class="main">
+      <section class="topbar">
+        <div class="page-title">
+          <h1>Duration Trends</h1>
+          <p>Track run, suite, and test execution time trends.</p>
+        </div>
+        <div class="status-pill warning"><span class="status-dot"></span> 8% Slower Than Baseline</div>
+      </section>
+      
+<section class="filters">
+  <div class="filter-group"><label>Application</label><select><option>All Applications</option><option>Portal UI</option><option>Search API</option></select></div>
+  <div class="filter-group"><label>Suite</label><select><option>All Suites</option><option>Authentication</option><option>Search Workflow</option></select></div>
+  <div class="filter-group"><label>Test Type</label><select><option>All Test Types</option><option>Smoke</option><option>API</option><option>UI</option></select></div>
+  <div class="filter-group"><label>Environment</label><select><option>All Environments</option><option>Nightly</option><option>Foxtrot</option></select></div>
+  <div class="filter-group"><label>Date Range</label><input type="text" value="Last 30 days" /></div>
+</section>
+<section class="metrics-grid">
+  <article class="metric-card"><div class="metric-label">Average Duration</div><div class="metric-value">18m 42s</div><div class="metric-footnote">Across selected runs</div></article>
+  <article class="metric-card"><div class="metric-label">Slowest Suite</div><div class="metric-value">6m 18s</div><div class="metric-footnote">Search Workflow</div></article>
+  <article class="metric-card"><div class="metric-label">Slowest Test</div><div class="metric-value">42s</div><div class="metric-footnote">claims.export_pdf</div></article>
+  <article class="metric-card"><div class="metric-label">Regression</div><div class="metric-value">+8%</div><div class="metric-footnote"><span class="metric-trend down">Slower than baseline</span></div></article>
+</section>
+<section class="content-grid">
+  <article class="panel"><div class="panel-header"><div><h2 class="panel-title">Run Duration Trend</h2><div class="panel-subtitle">Execution duration by run date</div></div></div><div class="chart-placeholder"><div class="chart-line"></div><div class="chart-line secondary"></div></div></article>
+  <article class="panel"><div class="panel-header"><div><h2 class="panel-title">Duration Breakdown</h2><div class="panel-subtitle">Suite contribution to total runtime</div></div></div><div class="donut-wrap"><div class="donut"><div class="donut-center"><div class="donut-value">34%</div><div class="donut-label">Search</div></div></div><div><div class="legend-item"><span class="legend-color pass"></span> Search Workflow</div><div class="legend-item"><span class="legend-color info"></span> Authentication</div><div class="legend-item"><span class="legend-color skip"></span> Claims Workflow</div></div></div></article>
+</section>
+<section class="bottom-grid">
+  <article class="panel full-width"><div class="panel-header"><div><h2 class="panel-title">Slowest Tests</h2><div class="panel-subtitle">Tests sorted by average duration</div></div></div><table><thead><tr><th>Test</th><th>Suite</th><th>Average</th><th>P95</th><th>Trend</th><th>Recommendation</th></tr></thead><tbody><tr><td>claims.export_pdf</td><td>Claims Workflow</td><td>42s</td><td>58s</td><td><span class="badge fail">Slower</span></td><td>Review file generation wait</td></tr><tr><td>search.results_are_sorted</td><td>Search Workflow</td><td>31s</td><td>46s</td><td><span class="badge warn">Variable</span></td><td>Check backend search latency</td></tr><tr><td>login.valid_user_can_login</td><td>Authentication</td><td>18s</td><td>25s</td><td><span class="badge pass">Stable</span></td><td>No action</td></tr></tbody></table></article>
+</section>
+
+    </main>
+  </div>
+</body>
+</html>
