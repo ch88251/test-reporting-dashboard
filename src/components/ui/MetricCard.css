@@ -1,0 +1,35 @@
+.metric-card {
+  background: var(--panel);
+  border 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+.metric-label {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.metric-footnote {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.metric-footnote.up {
+  color: var(--success);
+  font-weight: 700;
+}
+
+.metric-footnote.down {
+  color: var(--danger);
+  font-weight: 700;
+}
