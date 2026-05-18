@@ -1,77 +1,262 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quality Overview | Test Automation Reporting</title>
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
-  <div class="app-shell">
-    
-    <aside class="sidebar">
-      <div class="brand">
-        <div class="brand-mark">Q</div>
-        <div>
-          <div class="brand-title">Quality<br />Dashboard</div>
-          <div class="brand-subtitle">Test Automation Reporting</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quality Overview | Test Automation Reporting</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">Q</div>
+          <div>
+            <div class="brand-title">Quality<br />Dashboard</div>
+            <div class="brand-subtitle">Test Automation Reporting</div>
+          </div>
         </div>
-      </div>
-      <div class="nav-section-title">Dashboards</div><a class="nav-item active" href="overview.html">Overview</a><a class="nav-item" href="test-runs.html">Test Runs</a><a class="nav-item" href="failure-analysis.html">Failure Analysis</a><a class="nav-item" href="flaky-tests.html">Flaky Tests</a><a class="nav-item" href="duration-trends.html">Duration Trends</a><div class="nav-section-title">Administration</div><a class="nav-item" href="administration.html">Administration</a><a class="nav-item" href="applications.html">Applications</a><a class="nav-item" href="environments.html">Environments</a><a class="nav-item" href="retention.html">Retention</a><a class="nav-item" href="system-health.html">System Health</a>
-    </aside>
-    
-    <main class="main">
-      <section class="topbar">
-        <div class="page-title">
-          <h1>Quality Overview</h1>
-          <p>Current test health across applications, environments, and release versions.</p>
-        </div>
-        <div class="status-pill "><span class="status-dot"></span> Release Candidate Healthy</div>
-      </section>
-      
-<section class="filters">
-  <div class="filter-group"><label>Application</label><select><option>All Applications</option><option>Claims Service</option><option>Portal UI</option><option>Search API</option></select></div>
-  <div class="filter-group"><label>Version</label><select><option>1.24.0</option><option>1.23.0</option><option>1.22.1</option></select></div>
-  <div class="filter-group"><label>Environment</label><select><option>All Environments</option><option>Development</option><option>Nightly</option><option>Foxtrot</option><option>Preprod</option></select></div>
-  <div class="filter-group"><label>Test Type</label><select><option>All Test Types</option><option>Smoke</option><option>API</option><option>UI</option><option>Regression</option><option>Performance</option></select></div>
-  <div class="filter-group"><label>Date Range</label><input type="text" value="Last 14 days" /></div>
-</section>
-<section class="metrics-grid">
-  <article class="metric-card"><div class="metric-label">Pass Rate</div><div class="metric-value">91.4%</div><div class="metric-footnote"><span class="metric-trend up">+2.1%</span> from previous build</div></article>
-  <article class="metric-card"><div class="metric-label">Failed Tests</div><div class="metric-value">17</div><div class="metric-footnote"><span class="metric-trend down">-6</span> fewer than last run</div></article>
-  <article class="metric-card"><div class="metric-label">Total Tests</div><div class="metric-value">1,248</div><div class="metric-footnote">Across 42 suites</div></article>
-  <article class="metric-card"><div class="metric-label">Avg Duration</div><div class="metric-value">18m 42s</div><div class="metric-footnote"><span class="metric-trend down">+1m 08s</span> slower than baseline</div></article>
-</section>
-<section class="content-grid">
-  <article class="panel">
-    <div class="panel-header"><div><h2 class="panel-title">Pass / Fail Trend</h2><div class="panel-subtitle">Daily pass rate and failure volume</div></div><button class="panel-action">View Details</button></div>
-    <div class="chart-placeholder"><div class="chart-line"></div><div class="chart-line secondary"></div></div>
-  </article>
-  <article class="panel">
-    <div class="panel-header"><div><h2 class="panel-title">Latest Run Outcome</h2><div class="panel-subtitle">Version 1.24.0 / Foxtrot / Smoke</div></div></div>
-    <div class="donut-wrap"><div class="donut"><div class="donut-center"><div class="donut-value">91%</div><div class="donut-label">Passed</div></div></div><div><div class="legend-item"><span class="legend-color pass"></span> 1,140 Passed</div><div class="legend-item"><span class="legend-color fail"></span> 82 Failed</div><div class="legend-item"><span class="legend-color skip"></span> 26 Skipped</div></div></div>
-  </article>
-</section>
-<section class="bottom-grid">
-  <article class="panel">
-    <div class="panel-header"><div><h2 class="panel-title">Recent Test Runs</h2><div class="panel-subtitle">Most recent published executions</div></div><button class="panel-action">Open Run Explorer</button></div>
-    <table><thead><tr><th>Run ID</th><th>App</th><th>Env</th><th>Type</th><th>Status</th><th>Report</th></tr></thead><tbody>
-      <tr><td>260501143012</td><td>Portal UI</td><td>Foxtrot</td><td>Smoke</td><td><span class="badge fail">Failed</span></td><td>Open</td></tr>
-      <tr><td>260501123455</td><td>Search API</td><td>Nightly</td><td>API</td><td><span class="badge pass">Passed</span></td><td>Open</td></tr>
-      <tr><td>260501101806</td><td>Claims Service</td><td>Preprod</td><td>Regression</td><td><span class="badge warn">Unstable</span></td><td>Open</td></tr>
-    </tbody></table>
-  </article>
-  <article class="panel">
-    <div class="panel-header"><div><h2 class="panel-title">Top Failing Tests</h2><div class="panel-subtitle">Failures observed in selected date range</div></div></div>
-    <div class="list">
-      <div class="list-item"><div><div class="item-name">login.valid_user_can_login</div><div class="item-meta">Portal UI · authentication · assertion</div></div><div class="item-count">8</div></div>
-      <div class="list-item"><div><div class="item-name">search.results_are_sorted</div><div class="item-meta">Search API · relevance · timeout</div></div><div class="item-count">5</div></div>
-      <div class="list-item"><div><div class="item-name">claims.create_claim_success</div><div class="item-meta">Claims Service · workflow · api error</div></div><div class="item-count">4</div></div>
-    </div>
-  </article>
-</section>
+        <div class="nav-section-title">Dashboards</div>
+        <a class="nav-item active" href="overview.html">Overview</a
+        ><a class="nav-item" href="test-runs.html">Test Runs</a
+        ><a class="nav-item" href="failure-analysis.html">Failure Analysis</a
+        ><a class="nav-item" href="flaky-tests.html">Flaky Tests</a
+        ><a class="nav-item" href="duration-trends.html">Duration Trends</a>
+        <div class="nav-section-title">Administration</div>
+        <a class="nav-item" href="administration.html">Administration</a
+        ><a class="nav-item" href="applications.html">Applications</a
+        ><a class="nav-item" href="environments.html">Environments</a
+        ><a class="nav-item" href="retention.html">Retention</a
+        ><a class="nav-item" href="system-health.html">System Health</a>
+      </aside>
 
-    </main>
-  </div>
-</body>
+      <main class="main">
+        <section class="topbar">
+          <div class="page-title">
+            <h1>Quality Overview</h1>
+            <p>
+              Current test health across applications, environments, and release
+              versions.
+            </p>
+          </div>
+          <div class="status-pill">
+            <span class="status-dot"></span> Release Candidate Healthy
+          </div>
+        </section>
+
+        <section class="filters">
+          <div class="filter-group">
+            <label>Application</label
+            ><select>
+              <option>All Applications</option>
+              <option>Claims Service</option>
+              <option>Portal UI</option>
+              <option>Search API</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Version</label
+            ><select>
+              <option>1.24.0</option>
+              <option>1.23.0</option>
+              <option>1.22.1</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Environment</label
+            ><select>
+              <option>All Environments</option>
+              <option>Development</option>
+              <option>Nightly</option>
+              <option>Foxtrot</option>
+              <option>Preprod</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Test Type</label
+            ><select>
+              <option>All Test Types</option>
+              <option>Smoke</option>
+              <option>API</option>
+              <option>UI</option>
+              <option>Regression</option>
+              <option>Performance</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Date Range</label><input type="text" value="Last 14 days" />
+          </div>
+        </section>
+        <section class="metrics-grid">
+          <article class="metric-card">
+            <div class="metric-label">Pass Rate</div>
+            <div class="metric-value">91.4%</div>
+            <div class="metric-footnote">
+              <span class="metric-trend up">+2.1%</span> from previous build
+            </div>
+          </article>
+          <article class="metric-card">
+            <div class="metric-label">Failed Tests</div>
+            <div class="metric-value">17</div>
+            <div class="metric-footnote">
+              <span class="metric-trend down">-6</span> fewer than last run
+            </div>
+          </article>
+          <article class="metric-card">
+            <div class="metric-label">Total Tests</div>
+            <div class="metric-value">1,248</div>
+            <div class="metric-footnote">Across 42 suites</div>
+          </article>
+          <article class="metric-card">
+            <div class="metric-label">Avg Duration</div>
+            <div class="metric-value">18m 42s</div>
+            <div class="metric-footnote">
+              <span class="metric-trend down">+1m 08s</span> slower than
+              baseline
+            </div>
+          </article>
+        </section>
+        <section class="content-grid">
+          <article class="panel">
+            <div class="panel-header">
+              <div>
+                <h2 class="panel-title">Pass / Fail Trend</h2>
+                <div class="panel-subtitle">
+                  Daily pass rate and failure volume
+                </div>
+              </div>
+              <button class="panel-action">View Details</button>
+            </div>
+            <div class="chart-placeholder">
+              <div class="chart-line"></div>
+              <div class="chart-line secondary"></div>
+            </div>
+          </article>
+          <article class="panel">
+            <div class="panel-header">
+              <div>
+                <h2 class="panel-title">Latest Run Outcome</h2>
+                <div class="panel-subtitle">
+                  Version 1.24.0 / Foxtrot / Smoke
+                </div>
+              </div>
+            </div>
+            <div class="donut-wrap">
+              <div class="donut">
+                <div class="donut-center">
+                  <div class="donut-value">85%</div>
+                  <div class="donut-label">Passed</div>
+                </div>
+              </div>
+              <div>
+                <div class="legend-item">
+                  <span class="legend-color pass"></span> 1,140 Passed
+                </div>
+                <div class="legend-item">
+                  <span class="legend-color fail"></span> 82 Failed
+                </div>
+                <div class="legend-item">
+                  <span class="legend-color error"></span> 26 Error
+                </div>
+                <div class="legend-item">
+                  <span class="legend-color skipped"></span> 26 Skipped
+                </div>           
+                <div class="legend-item">
+                  <span class="legend-color pending"></span> 12 Pending
+                </div>     
+              </div>
+            </div>
+          </article>
+        </section>
+        <section class="bottom-grid">
+          <article class="panel">
+            <div class="panel-header">
+              <div>
+                <h2 class="panel-title">Recent Test Runs</h2>
+                <div class="panel-subtitle">
+                  Most recent published executions
+                </div>
+              </div>
+              <button class="panel-action">Open Run Explorer</button>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Run ID</th>
+                  <th>App</th>
+                  <th>Env</th>
+                  <th>Type</th>
+                  <th>Status</th>
+                  <th>Report</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>260501143012</td>
+                  <td>Portal UI</td>
+                  <td>Foxtrot</td>
+                  <td>Smoke</td>
+                  <td><span class="badge fail">Failed</span></td>
+                  <td>Open</td>
+                </tr>
+                <tr>
+                  <td>260501123455</td>
+                  <td>Search API</td>
+                  <td>Nightly</td>
+                  <td>API</td>
+                  <td><span class="badge pass">Passed</span></td>
+                  <td>Open</td>
+                </tr>
+                <tr>
+                  <td>260501101806</td>
+                  <td>Claims Service</td>
+                  <td>Preprod</td>
+                  <td>Regression</td>
+                  <td><span class="badge warn">Unstable</span></td>
+                  <td>Open</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+          <article class="panel">
+            <div class="panel-header">
+              <div>
+                <h2 class="panel-title">Top Failing Tests</h2>
+                <div class="panel-subtitle">
+                  Failures observed in selected date range
+                </div>
+              </div>
+            </div>
+            <div class="list">
+              <div class="list-item">
+                <div>
+                  <div class="item-name">login.valid_user_can_login</div>
+                  <div class="item-meta">
+                    Portal UI · authentication · assertion
+                  </div>
+                </div>
+                <div class="item-count">8</div>
+              </div>
+              <div class="list-item">
+                <div>
+                  <div class="item-name">search.results_are_sorted</div>
+                  <div class="item-meta">Search API · relevance · timeout</div>
+                </div>
+                <div class="item-count">5</div>
+              </div>
+              <div class="list-item">
+                <div>
+                  <div class="item-name">claims.create_claim_success</div>
+                  <div class="item-meta">
+                    Claims Service · workflow · api error
+                  </div>
+                </div>
+                <div class="item-count">4</div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>

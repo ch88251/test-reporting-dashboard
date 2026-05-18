@@ -71,12 +71,6 @@ a {
   line-height: 1.2;
 }
 
-.brand-subtitle {
-  font-size: 12px;
-  color: #9ca3af;
-  margin-top: 3px;
-}
-
 .nav-section-title {
   font-size: 11px;
   text-transform: uppercase;
@@ -193,7 +187,7 @@ a {
 
 .metrics-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 18px;
   margin-bottom: 22px;
 }
@@ -341,7 +335,13 @@ a {
   width: 170px;
   height: 170px;
   border-radius: 50%;
-  background: conic-gradient(var(--success) 0 91%, var(--danger) 91% 97%, var(--warning) 97% 100%);
+  background: conic-gradient(
+    var(--success) 0 65%,
+    var(--danger) 65% 78%,
+    var(--warning) 78% 83%,
+    var(--muted) 83% 93%,
+    var(--info) 93% 100%
+  );
   display: grid;
   place-items: center;
   position: relative;
@@ -388,8 +388,9 @@ a {
 
 .legend-color.pass { background: var(--success); }
 .legend-color.fail { background: var(--danger); }
-.legend-color.skip { background: var(--warning); }
-.legend-color.info { background: var(--info); }
+.legend-color.error { background: var(--warning); }
+.legend-color.skipped { background: var(--muted); }
+.legend-color.pending { background: var(--info); }
 
 table {
   width: 100%;
